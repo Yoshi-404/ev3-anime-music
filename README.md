@@ -1,3 +1,5 @@
+*[Read this in English](README_EN.md)*
+
 # LEGO EV3 Anime Music Player
 
 Um script em Python para o LEGO Mindstorms EV3 que toca aleatoriamente temas clássicos de animes utilizando o speaker do robô. 
