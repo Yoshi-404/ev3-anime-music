@@ -1,23 +1,75 @@
+*[Leia em Português](README.md)*
+
 # LEGO EV3 Anime Music Player
 
-A Python script for the LEGO Mindstorms EV3 that randomly plays classic anime themes using the robot's speaker.
+A Python anime music player for the LEGO Mindstorms EV3 robot built using the **Pybricks** library on the **ev3dev** operating system.
 
-This project was developed to run on the **ev3dev** operating system using the **Pybricks** library.
+On each run, the robot randomly chooses a soundtrack from the song list and synthesizes the chiptune melody through the EV3 brick's internal speaker.
+
+---
+
+## Demonstration
+
+![LEGO EV3 Anime Music Player](assets/robot_playing.gif)
+
+> 🎥 **Video with audio:** Watch the [recorded video with chiptune audio (MP4)](assets/robot_playing.mp4) played on the robot.
+
+---
 
 ## Included Songs
-Whenever the script is executed, the EV3 randomly selects and plays one of the following songs:
-1. **Neon Genesis Evangelion** (A Cruel Angel's Thesis)
-2. **Naruto Shippuden** (Bluebird)
-3. **One Piece** (We Are!)
 
-## Prrequisites
-* A LEGO Mindstorms EV3 brick.
-* SD card with [ev3dev](https://www.ev3dev.org/) installed.
-* Environment configured with the `pybricks` library.
+| Song | Anime | Tempo (BPM) | Note Format |
+| :--- | :--- | :---: | :--- |
+| **A Cruel Angel's Thesis** | Neon Genesis Evangelion | 200 BPM | Pitch/Octave and duration fraction (e.g. `C3/3`, `D#3/3`, `R4/8`) |
+| **Bluebird** | Naruto Shippuden | 180 BPM | Pitch/Octave and duration fraction (e.g. `C#4/4`, `F#4/4`, `A4/2`) |
+| **We Are!** | One Piece | 192 BPM | Pitch/Octave and duration fraction (e.g. `A#4/6`, `D#5/2`, `F5/1`) |
 
-## How to run
-1. Connect to your EV3 via SSH or use the EV3 extension in VS Code
-2. Transfer the `musicas.py` file to your robot.
-3. Give execution permission to the file (if you are running it via terminal)
+---
+
+## How It Works
+
+The script [`musicas.py`](musicas.py) organizes all tracks inside a declarative `MUSICAS` list, where each entry contains:
+* `nome`: Title and anime series.
+* `tempo`: Song speed in beats per minute (BPM).
+* `notas`: List of musical notes and rests using Pybricks standard notation (`[note][octave]/[duration]`).
+
+Track selection is handled with `random.choice(MUSICAS)`. The script also provides an automatic fallback for desktop testing (PC/Mac/Linux) without requiring physical EV3 hardware libraries.
+
+---
+
+## Prerequisites
+
+* LEGO Mindstorms EV3 intelligent brick.
+* MicroSD card with [ev3dev](https://www.ev3dev.org/) installed.
+* Python environment configured with the [Pybricks](https://pybricks.com/) library.
+
+---
+
+## How to Run
+
+### On the LEGO EV3 Brick (ev3dev)
+
+1. Connect to your EV3 via SSH or using the **LEGO MINDSTORMS EV3 MicroPython** extension in VS Code.
+2. Transfer `musicas.py` to your robot's project directory.
+3. Grant execution permissions (if running via terminal):
    ```bash
    chmod +x musicas.py
+   ```
+4. Run the script:
+   ```bash
+   ./musicas.py
+   ```
+   *Or launch it directly from the EV3 File Browser on the brick's LCD display.*
+
+### Local Test on Computer (Simulation Mode)
+
+To test the logic and random selection before deploying to the robot:
+```bash
+python3 musicas.py
+```
+
+---
+
+## License
+
+Distributed under the [MIT License](LICENSE). See `LICENSE` for more information.
