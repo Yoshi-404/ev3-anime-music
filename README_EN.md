@@ -12,8 +12,6 @@ On each run, the robot randomly chooses a soundtrack from the song list and synt
 
 ![LEGO EV3 Anime Music Player](assets/robot_playing.gif)
 
-> 🎥 **Video with audio:** Watch the [recorded video with chiptune audio (MP4)](assets/robot_playing.mp4) played on the robot.
-
 ---
 
 ## Included Songs
