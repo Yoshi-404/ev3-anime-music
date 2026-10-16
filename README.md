@@ -12,8 +12,6 @@ A cada execução, o robô escolhe aleatoriamente uma trilha sonora da lista de 
 
 ![LEGO EV3 Anime Music Player](assets/robot_playing.gif)
 
-> 🎥 **Vídeo com áudio:** Assista ao [vídeo gravado com áudio (MP4)](assets/robot_playing.mp4) sintetizado no robô.
-
 ---
 
 ## Músicas Inclusas
